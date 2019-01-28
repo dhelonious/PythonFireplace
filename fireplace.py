@@ -9,6 +9,7 @@ resolution = (60, 100)
 intensity = 5
 glow_fraction = 0.33
 number_glow_patterns = 100
+wood_distance = 3
 
 # Prepare values
 flame = np.zeros(resolution)
@@ -29,8 +30,9 @@ fire = plt.imshow(
 # Prepare glowing patterns
 glow_size = int(resolution[1]*glow_fraction)
 glow_patterns = [
-    np.random.choice(cols, size=glow_size, replace=False)
-    for _ in range(number_glow_patterns)
+    np.random.choice(
+        cols[wood_distance:-wood_distance], size=glow_size, replace=False
+    ) for _ in range(number_glow_patterns)
 ]
 
 def glow(wood):
