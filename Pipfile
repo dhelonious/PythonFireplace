@@ -9,6 +9,7 @@ verify_ssl = true
 numpy = "*"
 matplotlib = "*"
 pyaudio = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.5"
