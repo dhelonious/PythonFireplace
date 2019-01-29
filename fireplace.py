@@ -18,8 +18,15 @@ cols = np.arange(1, resolution[1]-1)
 damping = 10/intensity
 
 # Prepare fireplace
-fireplace = plt.figure(figsize=plt.figaspect(flame))
-fireplace.add_axes([0,0,1,1])
+plt.rcParams["toolbar"] = "None"
+
+fireplace = plt.figure(
+    figsize = plt.figaspect(flame),
+)
+fireplace.add_axes([0, 0, 1, 1])
+plt.axis("off")
+plt.get_current_fig_manager().window.resizable(False, False)
+
 fire = plt.imshow(
     flame,
     cmap="afmhot",
